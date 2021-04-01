@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>ESSENTIALS/LookBook</title>
+    <!--linking css externally-->
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <!--Including jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"> </script>
+    <!--linking .js file externally -->
+    <script src="Catalogue.js"></script>
+    <!--styling some css internally-->
+    <style>
+        h2 {
+            color: red;
+            text-transform: uppercase;
+            font-family: fantasy;
+            text-align: center;
+            background-color: white;
+            letter-spacing: 7px;
+        }
+
+        .salecontent {
+            padding: 5px;
+            margin: 0 auto;
+            width: 50%;
+            text-align: center;
+        }
+
+        .sale li {
+            text-align: center;
+            text-transform: uppercase;
+            list-style-type: none;
+        }
+
+        .container {
+            padding: 25px;
+            text-align: center;
+            margin-left: 25%;
+        }
+
+        .table {
+            border: solid black 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--header of page-->
+    <h1>ESSENTIALS</h1>
+    <!--navbar-->
+    <div class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="AboutUs.html">About Us</a></li>
+            <li><a href="LookBook.html">LookBook</a></li>
+            <li><a href="Catalogue.html">Catalogue</a></li>
+            <li><a href="Shop.html">Shop</a></li>
+            <li><a href="PaymentMethods.html">Payment Methods</a></li>
+            <li><a href="ShoppingCart.html">Shopping Cart</a></li>
+            <li><a href="ContactUs.html">Contact Us</a></li>
+        </ul>
+    </div>
+
+    <div class="salebox">
+        <div class="salecontent">
+            <!--create animation for sale items heading-->
+            <button>Animate Heading</button>
+            <h2>Sale Items (valid from 26.02.2021 - 16.03.2021)</h2>
+            <ul class="sale">
+                <li>French Terry Tucker Jacket</li>
+                <li>Fear of God Tee</li>
+                <li>The Vintage Sweatpant</li>
+                <li>Reflective Sweatshort</li>
+                <li>Crossbody</li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-8">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <!--I used the .colspan class to specify the number of columns my table should have.-->
+                                <th colspan="2" style="background-color:black"><span style="color: white">Shoe Size
+                                        Chart</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background-color:peru;">
+                                <td>US </td>
+                                <td>UK/SA</td>
+                            </tr>
+                            <tr>
+                                <td>8.5</td>
+                                <td> 6</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>6.5</td>
+                            </tr>
+                            <tr>
+                                <td>9.5</td>
+                                <td>7</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>7.5</td>
+                            </tr>
+                            <tr>
+                                <td>10.5</td>
+                                <td>8</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>8.5</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

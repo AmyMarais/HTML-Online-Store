@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>ESSENTIALS/MockNeckHalfZip</title>
+    <!--Including jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"> </script>
+    <!--link css externally-->
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <style>
+        .imgbox {
+            object-fit: contain;
+            display: block;
+            padding: 15px;
+            margin: 0 auto;
+            border: 0;
+        }
+
+        .productdetails {
+            float: right;
+            width: 45%;
+            padding: 15px;
+            right: auto;
+            margin-bottom: 20%;
+        }
+
+        h5 {
+            font: 10px;
+            font-family: fantasy;
+            letter-spacing: 3px;
+        }
+
+        .customize ul {
+            list-style-type: square;
+        }
+
+        body {
+            padding: 2em;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        /*styling for the dropdown menu*/
+        div#nav {
+            position: relative;
+            float: right;
+
+        }
+
+        div#nav a {
+            padding: 5px 15px 5px;
+        }
+
+        .dropdown-toggle {
+            padding: 0;
+            background: peru;
+        }
+
+        /**** ****/
+        ul.dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            margin-top: 5px;
+            padding: 5px 5px 0 0;
+            background: peru;
+            text-decoration: none;
+        }
+
+        ul.dropdown li {
+            list-style-type: none;
+        }
+
+        ul.dropdown li a {
+            text-decoration: none;
+            padding: 0em 1em;
+            display: block;
+        }
+
+        /*css for "add cart" button*/
+        .add-cart {
+            position: absolute;
+            width: 10%;
+            background-color: darkorange;
+            color: white;
+            cursor: pointer;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!--header of page-->
+    <h1>ESSENTIALS</h1>
+    <!--dropdown menu-->
+    <div id="nav">
+        <a class="dropdown-toggle" href="#">Menu</a>
+        <ul class="dropdown">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="AboutUs.html">AboutUs</a></li>
+            <li><a href="LookBook.html">LookBook</a></li>
+            <li><a href="Catalogue.html">Catalogue</a></li>
+            <li><a href="Shop.html">Shop</a></li>
+            <li><a href="PaymentMethods.html">Payment Methods</a></li>
+            <li><a href="ShoppingCart.html">Shopping Cart</a></li>
+            <li><a href="ContactUs.html">Contact Us</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="imgbox">
+            <img src="images/productimages/MHZ.jpg" alt="black sweater" width="500" height="600">
+            <div class="productdetails">
+                <h5>ESSENTIALS
+                    <br>
+                    MockNeck Half Zip
+                    <br>
+                    <span>$90</span>
+                </h5>
+                <!--"add to cart" button-->
+                <a href="#" class="add-cart cart1">Add Cart</a>
+                <br>
+                <br>
+                <!--To add the paypal payment method I got the code from the official PayPal Website:
+        https://www.paypal.com/buttons/smart?flowloggingId=2d4e0e11cb612-->
+
+                <div id="smart-button-container">
+                    <div style="text-align: center;">
+                        <div id="paypal-button-container"></div>
+                    </div>
+                </div>
+                <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"
+                    data-sdk-integration-source="button-factory"></script>
+                <script>
+                    function initPayPalButton() {
+                        paypal.Buttons({
+                            style: {
+                                shape: 'pill',
+                                color: 'gold',
+                                layout: 'vertical',
+                                label: 'buynow',
+
+                            },
+
+                            createOrder: function (data, actions) {
+                                return actions.order.create({
+                                    purchase_units: [{
+                                        "amount": {
+                                            "currency_code": "USD",
+                                            "value": 1
+                                        }
+                                    }]
+                                });
+                            },
+
+                            onApprove: function (data, actions) {
+                                return actions.order.capture().then(function (details) {
+                                    alert('Transaction completed by ' + details.payer.name
+                                        .given_name + '!');
+                                });
+                            },
+
+                            onError: function (err) {
+                                console.log(err);
+                            }
+                        }).render('#paypal-button-container');
+                    }
+                    initPayPalButton();
+                </script>
+
+
+                <p>Essentials mockneck with a half zip opening pull is designed with dropped
+                    shoulders and stylized volume in the body to provide comfortable drape.
+                    The piece is framed by rib knit cuffs and waist hem. A tonal Essentials
+                    rubberized logo is on the chest and an Essentials rubberized label is on the back. </p>
+                <h6>DETAILS</h6>
+                <div class="customize">
+                    <ul>
+                        <li>80% COTTON / 20% VISCOSE</li>
+                        <li>HALF ZIP MOCKNECK</li>
+                        <li>ESSENTIALS RUBBERIZED LOGO ON CHEST</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--linking .js file externally-->
+    <script src="MockNeckHalfZip.js"></script>
+</body>
+
+</html>
+
+<!--Refrences:
+https://fearofgod.com/collections/essentials/products/mockneck-half-zip-weathered-black-->

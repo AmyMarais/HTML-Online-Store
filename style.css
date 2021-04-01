@@ -1,0 +1,158 @@
+body {
+    background-color: white;
+    animation: mymove 5s infinite;
+}
+
+@keyframes mymove {
+    50% {
+        background-color: gainsboro;
+    }
+}
+
+/*Refence:https://www.w3schools.com/cssref/tryit.asp?filename=trycss_animatable*/
+
+/*CSS for HOMEPAGE*/
+
+h1 {
+    color: black;
+    text-align: center;
+    font-family: fantasy;
+    letter-spacing: 3px;
+    font-stretch: semi-expanded;
+}
+
+.button-container {
+    display: inline-block;
+    position: relative;
+}
+
+.button-container a {
+    position: absolute;
+    bottom: 10%;
+    right: 70%;
+    background-color: white;
+    border-radius: 1.5em;
+    color: peru;
+    text-transform: uppercase;
+    padding: 1em 1.5em;
+    display: block;
+    margin: 0 auto;
+}
+
+.btn-shop {
+    padding: 10px;
+}
+
+.btn-shop:hover {
+    color: white;
+    background-color: peru;
+    cursor: pointer;
+}
+
+/*NavBar CSS*/
+.navbar ul {
+    list-style-type: none;
+    background: black;
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.navbar li {
+    display: inline-block;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    width: 100%;
+    display: block;
+    padding: 25px;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+}
+
+.navbar a:hover {
+    background-color: peru;
+}
+
+.row {
+    padding: 25px;
+    image-rendering: crisp-edges;
+}
+
+/*ABOUTUS PAGE CSS*/
+h2 {
+    color: white;
+    font-family: fantasy;
+    letter-spacing: 3px;
+    font-stretch: semi-expanded;
+    padding: 25px;
+    background-color: peru;
+}
+
+span {
+    font-style: italic;
+}
+
+.aboutuscontent {
+    float: left;
+    width: 50%;
+    padding: 25px;
+}
+
+.aboutusp {
+    background-color: lightgrey;
+    padding: 25px;
+}
+
+.aboutusimg {
+    object-fit: cover;
+    float: right;
+    padding: 25px;
+    right: auto;
+    width: 50%;
+    margin-right: -40px;
+}
+
+.aboutusinfo {
+    padding: 10px;
+}
+
+/*PAYMENT METHODS PAGE CSS*/
+.paymentheading {
+    text-align: center;
+    padding: 25px;
+    margin-left: 27%;
+    margin-right: 30%;
+}
+
+/*ContactUs PAGE CSS*/
+h3,
+h4 {
+    color: black;
+    text-align: left;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.contactuscontent {
+    padding: 25px;
+    margin-left: 27%;
+    margin-right: 30%;
+}
+
+form {
+    padding: 25px;
+    margin-left: 27%;
+    margin-right: 30%;
+}
+
+/*Quick "add to cart" button*/
+#addtocart{
+    background-color: peru;
+    
+}

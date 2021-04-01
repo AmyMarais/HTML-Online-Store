@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>ESSENTIALS/TheVintageSweatpant</title>
+    <!--Including jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"> </script>
+    <!--externally linking .css file-->
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <style>
+        .imgbox {
+            object-fit: contain;
+            display: block;
+            padding: 15px;
+            margin: 0 auto;
+        }
+
+        img {
+            border: 0;
+            padding: 0;
+        }
+
+        .productdetails {
+            float: right;
+            width: 45%;
+            padding: 15px;
+            right: auto;
+            margin-bottom: 20%;
+        }
+
+        h5 {
+            font: 10px;
+            font-family: fantasy;
+            letter-spacing: 3px;
+        }
+
+        .customize ul {
+            list-style-type: square;
+        }
+
+        /*css for "add cart" button*/
+        .add-cart {
+            position: absolute;
+            width: 10%;
+            background-color: darkorange;
+            color: white;
+            cursor: pointer;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!--header of page-->
+    <h1>ESSENTIALS</h1>
+
+    <div class="container">
+        <div class="imgbox">
+            <img src="images/productimages/TVS.jpg" alt="a white vintage sweatpant" width="500" height="600">
+            <div class="productdetails">
+                <h5>ESSENTIALS
+                    <br>
+                    The Vintage Sweatpant
+                    <br>
+                    <span style="color: red;">SALE:$695</span>
+                </h5>
+                <!--"add to cart" button-->
+                <a href="#" class="add-cart cart1">Add Cart</a>
+                <br>
+                <br>
+                <!--To add the paypal payment method I got the code from the official PayPal Website:
+        https://www.paypal.com/buttons/smart?flowloggingId=2d4e0e11cb612-->
+                <div id="smart-button-container">
+                    <div style="text-align: center;">
+                        <div id="paypal-button-container"></div>
+                    </div>
+                </div>
+                <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"
+                    data-sdk-integration-source="button-factory"></script>
+                <script>
+                    function initPayPalButton() {
+                        paypal.Buttons({
+                            style: {
+                                shape: 'pill',
+                                color: 'gold',
+                                layout: 'vertical',
+                                label: 'buynow',
+
+                            },
+
+                            createOrder: function (data, actions) {
+                                return actions.order.create({
+                                    purchase_units: [{
+                                        "amount": {
+                                            "currency_code": "USD",
+                                            "value": 1
+                                        }
+                                    }]
+                                });
+                            },
+
+                            onApprove: function (data, actions) {
+                                return actions.order.capture().then(function (details) {
+                                    alert('Transaction completed by ' + details.payer.name
+                                        .given_name + '!');
+                                });
+                            },
+
+                            onError: function (err) {
+                                console.log(err);
+                            }
+                        }).render('#paypal-button-container');
+                    }
+                    initPayPalButton();
+                </script>
+
+                <p>The Vintage Sweatpant is hand crafted with a sun fade wash process to create a
+                    unique vintage piece that will vary in appearance. The new design, without
+                    back pockets, provide cleaner lines to style with Fear of God tailoring. The
+                    waistband is elevated by encasing elastic in a woven high density cotton fabric. </p>
+                <h6>DETAILS</h6>
+                <div class="customize">
+                    <ul>
+                        <li>VINTAGE SUN FADE WASH</li>
+                        <li>ENCASED ELASTIC WAISTBAND IN WOVEN HIGH DENSITY COTTON FABRIC</li>
+                        <li>EXTENDED DRAWCORD</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="TheVintageSweatpant.js"></script>
+</body>
+
+</html>
+
+<!--Refrences:
+https://fearofgod.com/collections/seventh-collection/products/the-vintage-sweatpant-vintage-concrete-white-->

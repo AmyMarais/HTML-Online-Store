@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!--linking .css file externally-->
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <title>ESSENTIALS/CartSection</title>
+    <style>
+        *,
+        ::before,
+        ::after {
+            box-sizing: border-box;
+        }
+
+        hr {
+            border: none;
+            background: #E0E4CC;
+            height: 1px;
+            /*   width:60%;
+  display:block;
+  margin-left:0; */
+        }
+
+        .productcont {
+            display: flex;
+        }
+
+        .product {
+            padding: 1em;
+            border: 1px solid #E0E4CC;
+            margin-right: 1em;
+            border-radius: 5px;
+        }
+
+        .cart-container {
+            border: 1px solid #E0E4CC;
+            border-radius: 5px;
+            margin-top: 1em;
+            padding: 1em;
+        }
+
+        .deliveryoptions,
+        button,
+        input[type="submit"] {
+            border: 1px solid #FA6900;
+            color: #fff;
+            background: #F38630;
+            padding: 0.6em 1em;
+            font-size: 1em;
+            line-height: 1;
+            border-radius: 1.2em;
+            transition: color 0.2s ease-in-out, background 0.2s ease-in-out, border-color 0.2s ease-in-out;
+        }
+
+        .deliveryoptions,
+        button:hover,
+        button:focus,
+        button:active,
+        input[type="submit"]:hover,
+        input[type="submit"]:focus,
+        input[type="submit"]:active {
+            background: #A7DBD8;
+            border-color: #69D2E7;
+            color: #000;
+            cursor: pointer;
+        }
+
+        table {
+            margin-bottom: 1em;
+            border-collapse: collapse;
+        }
+
+        table td,
+        table th {
+            text-align: left;
+            padding: 0.25em 1em;
+            border-bottom: 1px solid #E0E4CC;
+        }
+
+        #carttotals {
+            margin-right: 0;
+            margin-left: auto;
+        }
+
+        .cart-buttons {
+            width: auto;
+            margin-right: 0;
+            margin-left: auto;
+            display: flex;
+            justify-content: flex-end;
+            padding: 1em 0;
+        }
+
+        #emptycart {
+            margin-right: 1em;
+        }
+
+        table td:nth-last-child(1) {
+            text-align: right;
+        }
+
+        .message {
+            border-width: 1px 0px;
+            border-style: solid;
+            border-color: #A7DBD8;
+            color: #679996;
+            padding: 0.5em 0;
+            margin: 1em 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!--header of page-->
+    <h1>ESSENTIALS</h1>
+    <!--navbar-->
+    <div class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="AboutUs.html">About Us</a></li>
+            <li><a href="LookBook.html">LookBook</a></li>
+            <li><a href="Catalogue.html">Catalogue</a></li>
+            <li><a href="Shop.html">Shop</a></li>
+            <li><a href="PaymentMethods.html">Payment Methods</a></li>
+            <li><a href="ShoppingCart.html">Shopping Cart</a></li>
+            <li><a href="ContactUs.html">Contact Us</a></li>
+        </ul>
+    </div>
+    <!--contents of shopping cart -->
+    <div class="container"></div>
+    <div class="cart-container">
+        <h2>Cart</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th><strong>Product</strong></th>
+                    <th><strong>Price</strong></th>
+                    <th><strong>VAT</strong></th>
+                    <th><strong>Delivery Option</strong>
+                        <select class="deliveryoptions">
+                            <option value="">--Choose option--</option>
+                            <option value="15">Same-Day Delivery</option>
+                            <option value="8">Standard 1-2 Day Delivery</option>
+                        </select>
+                    </th>
+                </tr>
+                <!--discount coupons form-->
+                <h5>Apply Discount Coupon Here:</h5>
+                <p>Input a number between 1 and 10:</p>
+                <input id="number">
+                <button type="button" onclick="myFunction()">APPLY DISCOUNT COUPON</button>
+                <p id="text"></p>
+                <!--allow user to select between collection or delivery option-->
+                <h5>Collect or Deliver Items:</h5>
+                <form id="collectordelivery">
+                    <select>
+                        <option value="">--Choose an option--</option>
+                        <option value="0">Collection</option>
+                        <option value="8">Delivery</option>
+                    </select>
+                </form>
+            </thead>
+            <tbody id="carttable">
+            </tbody>
+        </table>
+        <hr>
+        <table id="carttotals">
+            <tr>
+                <td><strong>Items</strong></td>
+                <td><strong>Total</strong></td>
+            </tr>
+            <tr>
+                <td>x <span id="itemsquantity">0</span></td>
+
+                <td>$<span id="total">0</span></td>
+            </tr>
+        </table>
+
+        <div class="cart-buttons">
+            <button id="emptycart">Empty Cart</button>
+            <p class="refnumber"></p>
+            <button id="checkout" class="refnumber" onclick="confirmOrder()">Confirm Order</button>
+        </div>
+    </div>
+    <script src="shoppingcart.js"></script>
+
+</body>
+
+</html>
