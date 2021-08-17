@@ -1,4 +1,4 @@
-# Task15
+# E-Commerce Store
 ## Capstone Project II
 This project was created so that I could apply the HTML, CSS and JavaScript languages that I've learnt in my bootcamp with HyperionDev.
 This is an online clothing store that allows users to add items to their cart and see their total due. It also includes different payment methods for users to choose from.
